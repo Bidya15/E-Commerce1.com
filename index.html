@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Mart - Online Grocery Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <header class="header">
+        <a href="#" class="logo">
+            <i class="fas fa-carrot"></i>
+            Fresh Mart
+        </a>
+        
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#" id="home-nav"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" id="products-nav"><i class="fas fa-shopping-basket"></i> Products</a></li>
+                <li><a href="#" id="contact-nav"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li>
+                    <a href="#cart" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="home" class="section active">
+            <h1>Welcome to Fresh Mart</h1>
+            <p>Fresh groceries delivered to your doorstep.</p>
+
+            <!-- New Services Section -->
+             <div class="services-section">
+                <div class="services-container">
+                    <div class="services-header">
+                        <h2>Our Services</h2>
+                        <p>Experience the best in grocery shopping with our premium services designed for your convenience.</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-card scroll-animation">
+                            <div class="service-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3 class="service-title">Express Delivery</h3>
+                            <p class="service-description">Get your groceries delivered within 2 hours. We ensure fresh and timely delivery to your doorstep.</p>
+                            <a href="#" class="service-link">Learn More -></a>
+                        </div>
+
+                        <div class="service-card scroll-animation">
+                            <div class="service-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="service-title">Organic Selection</h3>
+                            <p class="service-description">Handpicked organic produce sourced directly from certified organic farm.</p>
+                            <a href="#" class="service-link">Learn More -></a>
+                        </div>
+
+                        <div class="service-card scroll-animation">
+                            <div class="service-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h3 class="service-title">Subscription Boxes</h3>
+                            <p class="service-description">Weekly or monthly curated boxes of seasonal products at special prices.</p>
+                            <a href="#" class="service-link">Learn More -></a>
+                        </div>
+
+                        <div class="service-card scroll-animation">
+                            <div class="service-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <h3 class="service-title">Special Discounts</h3>
+                            <p class="service-description">Exclusive deals and personalized offers for our regular customers.</p>
+                            <a href="#" class="service-link">Learn More -></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="products" class="section">
+            <!--Category section-->
+            <div class="category-navigation">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="fruits">Fruits</button>
+                <button class="category-btn" data-category="vegetables">Vegetables</button>
+                <button class="category-btn" data-category="dairy">Dairy Products</button>
+                <button class="category-btn" data-category="bakery">Bakery</button>
+                <button class="category-btn" data-category="beverages">Beverages</button>
+            </div>
+        
+            <div class="categories-container">
+                <!-- Categories will be dynamically populated -->
+            </div>
+
+            <div class="product-grid" id="product-grid"></div>
+        </section>
+
+         <!-- New Contact Section -->
+         <section id="contact" class="section contact-section">
+            <h2 class="animate__animated animate__fadeInDown">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Fresh Mart Street, Grocery City, Ghy-13</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 567 234 8900</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>support@freshmart.com</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon - Sat: 8:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+        </div>
+        <button class="home-return-btn" id="home-return-btn">
+            <i class="fas fa-home"></i>Home
+        </button>
+
+        <div id="cart-items"></div>
+        <div id="cart-total" class="cart-total">Total: ₹0.00</div>
+        <div class="cart-controls">
+            <button id="continue-shopping-btn" class="cart-btn">
+                <i class="fas fa-shopping-bag"></i> Continue Shopping
+            </button>
+            <button id="clear-cart-btn" class="cart-btn clear-cart-btn">
+                <i class="fas fa-trash"></i> Clear Cart
+            </button>
+        </div>
+
+
+        <!-- New Order Section -->
+        <div class="order-section">
+            <h2>Place Your Order</h2>
+            <div class="order-details">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <ul id="order-summary"></ul>
+                    <div id="order-total" class="cart-total">Total: ₹0.00</div>
+                </div>
+                <div class="order-form">
+                    <h3>Delivery Details</h3>
+                    <form id="delivery-form">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                        <input type="text" id="address" placeholder="Delivery Address" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        <textarea id="notes" placeholder="Additional Notes"></textarea>
+                        <button type="submit">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="header__btns">
+        <div class="bottom">
+            <h3>Download Our App</h3>
+        </div>
+        <a href="#">
+            <img src="Assets/google-play.jpeg" alt="google-play">
+        </a>
+        <a href="#">
+            <img src="Assets/app-store.jpeg" alt="app-store">
+        </a>
+    </div>
+    <div class="about">
+        <h3>About Us</h3>
+        <div class="about-us">
+            <p>
+                We offer a wide selection of fresh fruits, vegetables, dairy products, pantry staples, household essentials, and more. Whether you're stocking up for the week or looking for that special ingredient, we've got you covered. We partner with trusted suppliers and local farmers to ensure that every product meets our high standards of quality and freshness.
+            </p>
+            
+            <h3>Why Choose Us?</h3>
+            <li>Freshness Guaranteed: We prioritize sourcing fresh, top-quality products so you can enjoy the best with every order.</li>
+            <li>Fast & Reliable Delivery: With our efficient delivery system, you’ll get your groceries on time, every time.</li>
+            <li>Competitive Prices: We believe in offering great value without compromising on quality.</li>
+            <li>Easy Shopping Experience: Our user-friendly website makes it quick and easy to find what you need, with secure payment options and hassle-free checkout.</li>
+        </div>
+        <p>*All rignts reserved- 2025.</p>
+
+    </div>
+
+
+   <script src="script.js"></script>
+</body>
+</html>
